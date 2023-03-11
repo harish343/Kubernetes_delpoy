@@ -10,6 +10,4 @@
      - name: create new service
        command: kubectl apply -f /home/ubuntu/Service.yml
      - name: create new service
-       command: kubectl expose deployment harish343 --type=NodePort
-     - name: create new service
        command: kubectl port-forward svc/harish343 8080:8080 --address 0.0.0.0 &
