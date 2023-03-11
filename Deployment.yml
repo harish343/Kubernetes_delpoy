@@ -14,7 +14,7 @@ spec:
       spec:
        containers:
         - name: harish343
-          image: babbalrai/first_pipeline
+          image: harish343/first_pipeline
           imagePullPolicy: Always
           ports:
           - containerPort: 80
