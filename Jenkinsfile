@@ -19,19 +19,19 @@ node{
     stage('Docker image build'){
           sshagent(['ansible']) {
         sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 cd /home/ubuntu'
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image tag $JOB_NAME:v1.$BUILD_ID babbalrai/$JOB_NAME:v1.$BUILD_ID '
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image tag $JOB_NAME:v1.$BUILD_ID babbalrai/$JOB_NAME:latest '
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image tag $JOB_NAME:v1.$BUILD_ID harish343/$JOB_NAME:v1.$BUILD_ID '
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image tag $JOB_NAME:v1.$BUILD_ID harish343/$JOB_NAME:latest '
         
 }
     }
      stage('push docker image to docker hub'){
         sshagent(['ansible']) {
         withCredentials([string(credentialsId: 'dockerhub_passwd', variable: 'dockerhub_passwd')]) {
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker login -u babbalrai -p ${dockerhub_passwd}'
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image push babbalrai/$JOB_NAME:v1.$BUILD_ID '
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker login -u harish343 -p ${dockerhub_passwd}'
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image push harish343/$JOB_NAME:v1.$BUILD_ID '
         
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image push babbalrai/$JOB_NAME:latest '
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image rm babbalrai/$JOB_NAME:v1.$BUILD_ID babbalrai/$JOB_NAME:latest '
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image push harish343/$JOB_NAME:latest '
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.202.205.17 docker image rm harish343/$JOB_NAME:v1.$BUILD_ID harish343/$JOB_NAME:latest '
 }
         
 }
