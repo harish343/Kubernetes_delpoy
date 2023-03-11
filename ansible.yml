@@ -2,13 +2,13 @@
   become: true
   tasks: 
      - name: delete old deployment
-       command: kubectl delete -f /home/ec2-user/Deployment.yml
+       command: kubectl delete -f /home/ubuntu/Deployment.yml
      - name: delete old service
-       command: kubectl delete -f /home/ec2-user/Service.yml
+       command: kubectl delete -f /home/ubuntu/Service.yml
      - name: create new deployment
-       command: kubectl apply -f /home/ec2-user/Deployment.yml
+       command: kubectl apply -f /home/ubuntu/Deployment.yml
      - name: create new service
-       command: kubectl apply -f /home/ec2-user/Service.yml
+       command: kubectl apply -f /home/ubuntu/Service.yml
      - name: create new service
        command: kubectl expose deployment harish343 --type=NodePort
      - name: create new service
