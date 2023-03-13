@@ -38,8 +38,8 @@ node{
     }
        stage('copy files from ansible to kubernetes server'){
           sshagent(['kubernetes_server']) {
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.205.238.70 '
-        sh 'scp /var/lib/jenkins/workspace/first_pipeline/* ubuntu@54.205.238.70:/home/ubuntu'
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.201.111.15 '
+        sh 'scp /var/lib/jenkins/workspace/first_pipeline/* ubuntu@44.201.111.15:/home/ubuntu'
      
         
 }
