@@ -46,8 +46,8 @@ node{
     }
      stage('kubernetes depoyment using ansible'){
           sshagent(['ansible']) {
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.201.111.15 cd /home/ubuntu '
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.201.111.15 ansible-playbook ansible.yml -i inventory.txt'
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.203.24.217 cd /home/ubuntu '
+        sh 'ssh -o StrictHostKeyChecking=no ubuntu@44.203.24.217 ansible-playbook ansible.yml -i inventory.txt'
 
      
         
