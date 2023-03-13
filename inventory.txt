@@ -1,1 +1,1 @@
-webserver1 ansible_host=172.31.18.252 ansible_ssh_pass=admin ansible_connection=ssh ansible_port=22 ansible_user=ubuntu
+webserver1 ansible_host=172.31.91.22 ansible_ssh_pass=admin ansible_connection=ssh ansible_port=22 ansible_user=ubuntu
